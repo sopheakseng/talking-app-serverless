@@ -1,14 +1,20 @@
 module.exports = {
-  root: true,
   env: {
-    es6: true,
-    node: true,
+    browser: true,
+    commonjs: true,
+    es6: true
   },
-  extends: [
-    "eslint:recommended",
-    "google",
-  ],
+  extends: "eslint:recommended",
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: "module"
+  },
   rules: {
-    quotes: ["error", "double"],
-  },
+    "no-console": "off",
+    "no-unused-vars": "warn"
+  }
 };
